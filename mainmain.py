@@ -9,6 +9,21 @@ def encode(password):
         decoded = decoded + str(value)
     return decoded
 
+def decode(encoded_password):
+    encoded_password = encoded_password.split()
+    i = 0
+    while i != len(encoded_password):
+        encoded_password[i] = int(encoded_password[i])
+        encoded_password[i] -= 3
+        if encoded_password [i] == -3:
+            encoded_password[i] = 7
+        elif encoded_password[i] == -2:
+            encoded_password[i] = 8
+        elif encoded_password[i] == -1:
+            encoded_password[i] = 9
+        encoded_password[i] = str(encoded_password[i])
+        i += 1
+    return ''.join(encoded_password)
 def quit_program():
     exit()
 
