@@ -4,6 +4,8 @@ def encode(password):
     decoded = ""
     for i in range(0,8):
         value = int(password[i]) + 3
+            if value >= 10:
+                value = str(value[1])
         decoded = decoded + str(value)
     return decoded
 
