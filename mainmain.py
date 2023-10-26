@@ -10,7 +10,7 @@ def encode(password):
     return decoded
 
 def decode(encoded_password):
-    encoded_password = encoded_password.split()
+    encoded_password = list(encoded_password)
     i = 0
     while i != len(encoded_password):
         encoded_password[i] = int(encoded_password[i])
